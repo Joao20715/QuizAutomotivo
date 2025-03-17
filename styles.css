@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow: hidden;
+}
+
+.screen {
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #2c5364;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+}
+
+button {
+    background: #2c5364;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: #0f2027;
+    transform: scale(1.05);
+}
+
+/* Tela Inicial */
+#start-screen {
+    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?fit=crop&w=700&q=80') no-repeat center/cover;
+    color: #fff;
+    padding: 50px 20px;
+    border-radius: 15px;
+}
+
+#start-screen h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#start-screen label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#start-screen input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Quiz */
+#progress-bar {
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #2c5364;
+    transition: width 0.4s ease;
+}
+
+#question-number {
+    color: #2c5364;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background: #f4f4f4;
+    color: #2c5364;
+    border-radius: 10px;
+    padding: 15px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#options button:hover {
+    background: #2c5364;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#feedback {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Resultado */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+}

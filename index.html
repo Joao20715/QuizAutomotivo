@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Automóveis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>Quiz de Automóveis</h1>
+            <p>Teste seu conhecimento sobre carros!</p>
+            <label for="name">Seu Nome:</label>
+            <input type="text" id="name" placeholder="Digite seu nome">
+            <button id="start-button">Começar</button>
+        </div>
+        <div id="quiz-screen" class="screen hidden">
+            <div id="progress-bar"></div>
+            <p id="question-number"></p>
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <div id="feedback"></div>
+        </div>
+        <div id="result-screen" class="screen hidden">
+            <h2>Seu Resultado</h2>
+            <p id="score"></p>
+            <p id="message"></p>
+            <button id="restart-button">Jogar Novamente</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
