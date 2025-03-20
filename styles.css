@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: url('img/crie\ um\ logo\ sobre\ com\ o\ nome\ carro\ legal\ utilizando\ cores\ escuras\ .jpg') no-repeat center/cover fixed;
+    background: url('img/carro.jpg') no-repeat center/cover fixed;
     min-height: 100vh;
     display: flex;
     justify-content: center;
