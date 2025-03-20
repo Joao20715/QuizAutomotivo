@@ -5,95 +5,172 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Roboto', sans-serif;
+    background: url('img/crie\ um\ logo\ sobre\ com\ o\ nome\ carro\ legal\ utilizando\ cores\ escuras\ .jpg') no-repeat center/cover fixed;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-decoration {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background: url('trophy.jpg') no-repeat center/contain;
+    opacity: 0.7;
+    z-index: 0;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 .container {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.8), rgba(81, 45, 168, 0.6));
+    border-radius: 20px;
+    padding: 40px;
     width: 90%;
-    max-width: 700px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     text-align: center;
+    position: relative;
+    z-index: 1;
     overflow: hidden;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 .screen {
-    padding: 20px;
+    padding: 30px;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards 0.2s;
 }
 
 .hidden {
     display: none;
 }
 
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
 h1, h2 {
-    color: #2c5364;
-    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFC107; /* Amarelo para títulos */
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 p {
-    color: #555;
+    color: #000000; /* Preto para parágrafos */
     font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 button {
-    background: #2c5364;
-    color: #fff;
+    background: linear-gradient(135deg, #FFC107, #FFCA28); /* Gradiente amarelo */
+    color: #000000; /* Preto para texto dos botões */
     border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 15px 40px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    transition: transform 0.2s, background 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6); /* Sombra com tom de amarelo */
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.2); /* Efeito preto sutil */
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+button:hover::after {
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
 }
 
 button:hover {
-    background: #0f2027;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFCA28, #FFD700); /* Amarelo mais claro no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.8); /* Sombra mais intensa */
+}
+
+input {
+    width: 85%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #3F51B5;
+    color: #000000; /* Preto para texto do input */
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+    border: 2px solid #FFC107; /* Borda amarela */
+}
+
+input:focus {
+    outline: none;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.4), 0 0 12px #FFC107; /* Efeito amarelo no foco */
+    transform: scale(1.03);
 }
 
 /* Tela Inicial */
 #start-screen {
-    background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?fit=crop&w=700&q=80') no-repeat center/cover;
-    color: #fff;
-    padding: 50px 20px;
-    border-radius: 15px;
-}
-
-#start-screen h1 {
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    background: none;
+    color: #000000; /* Preto para texto da tela inicial */
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 #start-screen label {
-    font-size: 18px;
     display: block;
-    margin-bottom: 10px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-#start-screen input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
     font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #000000; /* Preto para label */
+    text-shadow: 0 2px 5px rgba(255, 193, 7, 0.5); /* Sombra amarela */
 }
 
 /* Quiz */
 #progress-bar {
-    height: 8px;
-    background: #ddd;
-    border-radius: 4px;
+    height: 18px;
+    background: #3F51B5;
+    border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 #progress-bar::after {
@@ -101,45 +178,179 @@ button:hover {
     display: block;
     height: 100%;
     width: 0;
-    background: #2c5364;
-    transition: width 0.4s ease;
+    background: linear-gradient(90deg, #FFC107, #FFCA28); /* Progresso em amarelo */
+    transition: width 0.6s ease;
+    box-shadow: 0 3px 12px rgba(255, 193, 7, 0.4);
 }
 
 #question-number {
-    color: #2c5364;
-    font-size: 16px;
-    margin-bottom: 10px;
+    color: #000000; /* Preto para número da pergunta */
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(255, 193, 7, 0.5); /* Sombra amarela */
 }
 
 #options button {
     display: block;
     width: 100%;
-    margin: 10px 0;
-    background: #f4f4f4;
-    color: #2c5364;
-    border-radius: 10px;
-    padding: 15px;
-    transition: background 0.3s, transform 0.2s;
+    margin: 15px 0;
+    background: #3F51B5;
+    color: #000000; /* Preto para opções */
+    border: 2px solid #FFC107; /* Borda amarela */
+    border-radius: 15px;
+    padding: 16px;
+    transition: all 0.4s ease;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+#options button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.2); /* Efeito preto sutil */
+    border-radius: 50%;
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+#options button:hover::after {
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
 }
 
 #options button:hover {
-    background: #2c5364;
-    color: #fff;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #FFCA28, #FFD700); /* Amarelo no hover */
+    color: #000000; /* Preto no hover */
+    border-color: #FFD700; /* Borda mais clara no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+}
+
+#options button.correct {
+    background: linear-gradient(135deg, #FFC107, #FFCA28); /* Amarelo para acerto */
+    color: #000000; /* Preto */
+    border-color: #FFC107;
+    box-shadow: 0 6px 25px rgba(255, 193, 7, 0.6);
+}
+
+#options button.wrong {
+    background: linear-gradient(135deg, #3F51B5, #303F9F); /* Azul escuro para erro */
+    color: #000000; /* Preto */
+    border-color: #3F51B5;
+    box-shadow: 0 6px 25px rgba(63, 81, 181, 0.6);
 }
 
 #feedback {
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s ease;
+    line-height: 1.6;
+    color: #000000; /* Preto para feedback */
+    text-shadow: 0 2px 5px rgba(255, 193, 7, 0.5); /* Sombra amarela */
 }
 
-/* Resultado */
+/* Resultado e Placar */
+#result-screen {
+    background: linear-gradient(135deg, #3F51B5, #5C6BC0);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#leaderboard {
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #5C6BC0, #7986CB);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 2px solid #FFC107; /* Borda amarela */
+}
+
+#leaderboard h3 {
+    color: #FFC107; /* Amarelo para título do placar */
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra preta */
+}
+
+#leaderboard table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 12px 20px;
+    text-align: left;
+    color: #000000; /* Preto para texto do placar */
+    background: #FFC107; /* Amarelo para fundo */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#leaderboard th {
+    background: linear-gradient(135deg, #FFCA28, #FFD700); /* Gradiente amarelo para cabeçalho */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#leaderboard td {
+    background: #FFCA28; /* Amarelo mais claro para células */
+}
+
+#leaderboard tr:hover td {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#leaderboard tr.leader td {
+    background: linear-gradient(135deg, #FFD700, #FFC107); /* Amarelo dourado para líder */
+    color: #000000; /* Preto */
+    font-weight: 600;
+}
+
+#leaderboard tr.leader td:first-child::before {
+    content: "👑 ";
+    color: #FFD700;
+    margin-right: 8px;
+}
+
 @media (max-width: 600px) {
     .container {
         width: 95%;
-        padding: 15px;
+        padding: 20px;
+    }
+    .background-decoration {
+        width: 150px;
+        height: 150px;
+        top: 5%;
+        right: 5%;
+    }
+    #options button {
+        padding: 12px;
+        font-size: 14px;
+    }
+    #leaderboard table {
+        font-size: 14px;
+    }
+    #leaderboard th, #leaderboard td {
+        padding: 10px 15px;
     }
 }

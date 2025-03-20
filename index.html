@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Automóveis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="background-decoration"></div>
     <div class="container">
         <div id="start-screen" class="screen">
             <h1>Quiz de Automóveis</h1>
-            <p>Teste seu conhecimento sobre carros!</p>
+            <p>Entre em um mundo de velocidade e conhecimento!</p>
             <label for="name">Seu Nome:</label>
             <input type="text" id="name" placeholder="Digite seu nome">
-            <button id="start-button">Começar</button>
+            <button id="start-button">Acelerar!</button>
         </div>
         <div id="quiz-screen" class="screen hidden">
             <div id="progress-bar"></div>
@@ -23,12 +25,13 @@
             <div id="feedback"></div>
         </div>
         <div id="result-screen" class="screen hidden">
-            <h2>Seu Resultado</h2>
+            <h2>Seu Desempenho</h2>
             <p id="score"></p>
             <p id="message"></p>
-            <button id="restart-button">Jogar Novamente</button>
+            <div id="leaderboard"></div>
+            <button id="restart-button">Reiniciar Corrida</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
